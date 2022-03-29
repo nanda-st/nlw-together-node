@@ -5,41 +5,41 @@ import { User } from './User';
 
 @Entity('compliments')
 class Compliment {
-    @PrimaryColumn()
-    readonly id: string;
+  @PrimaryColumn()
+  readonly id: string;
 
-    @Column()
+  @Column()
     user_sender: string;
 
-    @Column()
+  @Column()
     user_receiver: string;
 
-    @Column()
+  @Column()
     tag_id: string;
 
-    @Column()
+  @Column()
     message: string;
 
-    @CreateDateColumn()
+  @CreateDateColumn()
     created_at: string;
 
-    @JoinColumn({ name: 'user_sender' })
-    @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_sender' })
+  @ManyToOne(() => User)
     userSender: User;
 
-    @JoinColumn({ name: 'user_receiver' })
-    @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_receiver' })
+  @ManyToOne(() => User)
     userReceiver: User;
 
-    @JoinColumn({ name: 'tag_id' })
-    @ManyToOne(() => Tag)
+  @JoinColumn({ name: 'tag_id' })
+  @ManyToOne(() => Tag)
     tag: Tag;
 
-    constructor() {
-        if (!this.id) {
-            this.id = uuid();
-        }
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
     }
+  }
 }
 
-export { Compliment }
+export { Compliment };

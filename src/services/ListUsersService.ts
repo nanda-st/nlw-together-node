@@ -1,15 +1,15 @@
-import { getCustomRepository } from "typeorm"
-import { UserRepository } from "../repositories/UserRepository";
-import { instanceToPlain } from "class-transformer";
+import { getCustomRepository } from 'typeorm';
+import { UserRepository } from '../repositories/UserRepository';
+import { instanceToPlain } from 'class-transformer';
 
 class ListUsersService {
-    async execute() {
-        const userRepository = getCustomRepository(UserRepository);
+  async execute() {
+    const userRepository = getCustomRepository(UserRepository);
 
-        const users = await userRepository.find();
+    const users = await userRepository.find();
 
-        return instanceToPlain(users);
-    }
+    return instanceToPlain(users);
+  }
 }
 
-export { ListUsersService }
+export { ListUsersService };

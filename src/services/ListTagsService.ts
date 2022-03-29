@@ -1,14 +1,14 @@
-import { getCustomRepository } from "typeorm"
-import { TagRepository } from "../repositories/TagRepository";
+import { getCustomRepository } from 'typeorm';
+import { TagRepository } from '../repositories/TagRepository';
 
 class ListTagsService {
-    async execute() {
-        const tagRepository = getCustomRepository(TagRepository);
+  async execute() {
+    const tagRepository = getCustomRepository(TagRepository);
 
-        const tags = await tagRepository.find();
+    const tags = await tagRepository.find();
 
-        return tags;
-    }
+    return tags;
+  }
 }
 
-export { ListTagsService }
+export { ListTagsService };

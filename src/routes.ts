@@ -32,4 +32,4 @@ router.get('/users/compliments/sent', ensureAuthenticated, listUserSentComplimen
 router.get('/tags', ensureAuthenticated, listTagsController.handle);
 router.get('/users', ensureAuthenticated, listUsersController.handle);
 
-export { router }
+export { router };
